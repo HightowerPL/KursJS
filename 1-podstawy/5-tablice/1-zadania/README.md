@@ -3,7 +3,7 @@
 # KursJS - tablice
 
 ## Zadanie 1
-Zadeklaruj tablicę tab z 5 losowymi wyrazami. Wypisz w konsoli tą tablicę i jej długość. Następnie wypisz pierwszy i ostatni element.
+Zadeklaruj tablicę tab z 5 losowymi wyrazami. Wypisz w konsoli te tablicę i jej długość. Następnie wypisz pierwszy i ostatni element.
 
 ## Zadanie 2
 Robiąc pętlę po powyższej tablicy wypisz każdy element oraz jego długość. Skorzystaj z pętli `for`, `for of` i `forEach`.
