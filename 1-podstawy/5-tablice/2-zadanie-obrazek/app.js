@@ -15,3 +15,23 @@ let text = '';
 
 //tutaj wstawiamy do div wygenerowany html - nie ruszaj poniższej linijki
 document.querySelector('.canvas').innerHTML = text;
+
+
+
+////// CreativeSTYLE
+
+let ob = {
+    name: 'Marcin',
+    pet: {
+        name: "Rudolf"
+    }
+}
+
+let ob2 = Object.assign({}, ob);
+
+console.log(ob2.pet.name);
+
+ob.pet.name="Piotr";
+
+console.log(ob.pet.name);
+console.log(ob2.pet.name);

@@ -16,6 +16,6 @@ form.addEventListener("submit", function(e) {
     const val1 = input1.value;
     const val2 = input2.value;
 
-    alert(`Wynik dodawania liczb ${val1} i ${val2} to: ${val1 + val2}`);
+    alert(`Wynik dodawania liczb ${val1} i ${val2} to: ${parseInt(val1) + parseInt(val2)}`);
 
 })

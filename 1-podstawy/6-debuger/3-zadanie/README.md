@@ -1,6 +1,6 @@
 ![](../../kursjs.png)
 
-# Kurs Javascript - super postawy
+# Kurs Javascript - super podstawy
 
 ## Zadanie 1
 W pliku users.js jest tablica użytkowników. Naszym zadaniem będzie za pomocą pętli podliczenie zarobków wszystkich użytkowników.

@@ -613,7 +613,7 @@ const users = [
         firstName: "Edie",
         lastName: "Goodger",
         email: "egoodger2f@google.nl",
-        payment: "222"
+        payment: 222
     },
     {
         id: 89,

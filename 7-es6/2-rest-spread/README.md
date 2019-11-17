@@ -1,6 +1,6 @@
 ![](../../kursjs.png)
 
-# KursJS - template strings
+# KursJS - rest-spread
 
 ## Zadanie 1
 Napisz funkcję `randomTable(lng, min, max)`, która przyjmie 3 parametry: długość tablicy, minimalna liczba, maksymalna liczba.
