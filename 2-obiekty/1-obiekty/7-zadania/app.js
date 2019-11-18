@@ -16,3 +16,38 @@ const users = [
     [ 14, "Kimberli", "Berkeley", "kberkeleyd@merriam-webster.com", 19, 1994.97] ,
     [ 15, "Tawnya", "Illingworth", "tillingworthe@quantcast.com", 23, 1742.64]
 ]
+
+function fixData(arr) {
+    let fixedArr = []
+    arr.forEach(entry => {
+        fixedArr.push({ 
+            id: entry[0], 
+            name: entry[1], 
+            surname: entry[2], 
+            email: entry[3], 
+            age: entry[4], 
+            value: entry[5]
+        });
+    });
+    console.log(fixedArr);
+    return fixedArr;
+}
+
+fixData(users);
+
+function avgData(arr) {
+    let avg =0;
+    let allMoney = 0;
+    let emails = [];
+    arr.forEach(entry => {
+        emails.push(entry.email);
+        avg += entry.age;
+        allMoney += entry.value;
+    });
+
+    console.log(emails);
+    console.log(avg/arr.length);
+    console.log(allMoney);
+}
+
+avgData(fixData(users));
