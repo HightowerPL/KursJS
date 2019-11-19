@@ -3,7 +3,7 @@
 # KursJS - DOM
 
 ## Zadanie 1
-Otwórz konsolę debugera i korzystając z poznanych metod znajdź na stronie element o klasie `.element-title`. To tytuł posta.
+Otwórz konsolę debugera i korzystając z poznanych metod znajdź na stronie element o klasie `.post-title`. To tytuł posta.
 
 Wypisz ten element za pomocą `console.log()`, a następnie najedź kursorem na tekst w konsoli. Na stronie dany element powinien stać się podświetlony.
 Możesz też wybrać go w zakładce Elements, a następnie w konsoli wpisać `$1`.
