@@ -1,3 +1,5 @@
+// import Axios from "axios";
+
 /*
 Do wykonania tego zadania potrzebujesz mieć dobrze zainstalowany Node.js oraz umieć
 instalować paczki.
@@ -23,3 +25,64 @@ Następnie za pomocą ajaxa połącz się na adres który wygeneruje ci odpalony
 11. Napisz czy średnia wieku w Polsce jest większa od średniej na Świecie?
 
 */
+
+axios.get('http://localhost:3000/countries')
+    .then( resp => {
+        console.log(resp);
+
+        //1.
+        console.groupCollapsed("Nazwy państw");
+        resp.data.forEach(country => {
+            console.log(country.name);
+        })
+        console.groupEnd();
+
+        //2.
+        let pop = 0;
+        resp.data.forEach(country => {
+            pop += country.population
+        });
+        console.groupCollapsed('Ludność na świecie:')
+        console.log(pop);
+        console.groupEnd();
+
+        //3.
+        let avr = pop/resp.data.length;
+        console.log(`Średnia liczba ludności w państwie wynosi: ${avr}`);
+
+        //4. 
+        let plusGrow = resp.data.filter( country => country.grow > 0);
+        console.log(`Dodatni wzrost zaobserwowano w ${plusGrow.length} państwach`);
+
+        //5.
+        let minGrow = resp.data.filter( country => country.grow < 0);
+        console.log(`Ujemny wzrost zaobserwowano w ${minGrow.length} państwach`);
+
+        //6. 
+        // let area = 0;
+        // resp.data.forEach(country => area += country.world_area_in_percent);
+        let area = resp.data.map(a => a.world_area_in_percent).reduce( (a,b) =>  a + b);
+        console.log(area);
+
+        //7.
+        let fer = resp.data.map( a => a.fertility_rate).reduce( (a,b) => a + b)/resp.data.filter( a => a.fertility_rate != null).length;
+        console.log("Średnia dzietność na świecie wynosi: " + fer);
+
+        //8.
+        let age = resp.data.map( a => a.medium_age).reduce( (a,b) => a + b)/resp.data.filter(a => a.medium_age != null).length;
+        console.log("Średnia wieku na świecie wynosi: " + age);
+
+        //9.
+        let pl = resp.data.find(a => a.name == "Poland");
+        console.log(pl);
+        console.log('Dane dot. Polski');
+        for (let key in pl) {
+            console.log(`${key} : ${pl[key]}`);
+        };
+
+        //10.
+        pl.medium_age > age ? console.log('Średnia wieku w PL jest większa od tej na świecie.') : console.log('Średnia wieku w PL nie jest większa od tej na świecie.');
+
+
+
+    })
