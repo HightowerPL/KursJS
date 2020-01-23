@@ -1,6 +1,6 @@
 ![](../../kursjs.png)
 
-# KursJS - template strings
+# KursJS - desktrukturyzacja
 
 ## Zadanie 1
 Mamy obiekt:
