@@ -1,15 +1,16 @@
 class Brick {
-    constructor(x,y,graphic, width, height, type, live) {
+    constructor(x, y, width, height, type, live, graphic) {
         this.x = x;
         this.y = y;
-        this.graphic = graphic;
         this.width = width;
         this.height = height;
         this.type = type;
         this.live = live;
+        this.graphic = graphic;
+
     }
     print() {
-        console.log(this.x, this.y, this.graphic, this.width, this.height, this.live, this.type);
+        console.log(`x: ${this.x}, y: ${this.y}, width: ${this.width}, height: ${this.height}, type: ${this.type}, live: ${this.live}, graphic: ${this.graphic}`);
     }
     init() {
         console.log('Dodano plansze');
@@ -17,36 +18,44 @@ class Brick {
 }
 
 class BrickRed extends Brick {
-    constructor(x,y,width, height, type) {
-        super(x,y,width, height, type);
+    constructor(...param) {
+        super(...param);
         this.graphic = 'red.png';
         this.live = 15
     }
 }
 
+const red = new BrickRed(2, 4,  10, 10, 'enemy');
+red.init();
+red.print();
+
 class BrickBlue extends Brick {
-    constructor(x,y,width, height, type) {
-        super(x,y,width, height, type);
+    constructor(...param) {
+        super(...param);
         this.graphic = 'blue.png';
         this.live = 10
     }
 }
 
+const blue = new BrickBlue(20, 14, 25, 25, 'enemy');
+blue.print();
+
 class BrickGreen extends Brick {
-    constructor(x,y,width, height, type) {
-        super(x,y,width, height, type);
+    constructor(...param) {
+        super(...param);
         this.graphic = 'green.png';
         this.live = 20
     }
 }
 
-const red = new BrickRed(2, 4, 10, 10, 'enemy');
-console.log(red.init());
-console.log(red.print());
+const green = new BrickGreen(50, 49, 130, 120, 'npc', 'fdasfsd',321312);
+green.init();
+green.print();
+
 
 class BrickAnim extends Brick {
-    constructor(y, width, height, type, live) {
-        super(y, width, height, type, live);
+    constructor(...param) {
+        super(...param);
         this.x = 99;
         this.speed = 10;
     }
@@ -56,7 +65,7 @@ class BrickAnim extends Brick {
     }
 }
 
-const anim = new BrickAnim(5, 5, '',100, 100, 'anim', 50, 10);
+const anim = new BrickAnim(5, 5, 100, 100, 'anim', 50, 'anim.png');
 
 anim.print();
 anim.moveHorizontal()
