@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/HightowerPL/KursJS#readme",
   "dependencies": {
-    "axios": "^0.19.1"
+    "axios": "^0.21.1"
   }
 }
